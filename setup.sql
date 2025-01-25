@@ -8,6 +8,8 @@ CREATE DATABASE file_sharing_app;
 CREATE TABLE users (
     id BIGSERIAL PRIMARY KEY,
     name TEXT,
-    email TEXT,
+    email TEXT ,
     password TEXT
 );
+
+CREATE INDEX idx_user_email ON users(email);

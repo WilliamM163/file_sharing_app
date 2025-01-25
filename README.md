@@ -14,7 +14,7 @@ This project provides a web-based interface to easily transfer files between dev
 
 2. **Clone Repository:**  
     ```
-    git clone [Your Git Repository URL]
+    git clone https://github.com/WilliamM163/file_sharing_app.git
     ```
 
 3. **Navigate to Project Directory:**  
@@ -26,9 +26,18 @@ This project provides a web-based interface to easily transfer files between dev
     ```
     psql -U [your_postgresql_username] -d [your_postgresql_database_name] -f setup.sql
     ```
+5. **Edit Environment Variables:**
+In the server folder, adjust varaibles in `.env.template` and rename the file to `.env`.
 
-5. **Start Server:** Start the web server using the following command:  
+6. **Start Client:** Start the client app using the following command:
     ```
+    cd client
+    npm start
+    ```
+
+7. **Start Server:** Start the API server using the following command:  
+    ```
+    cd server
     npm start
     ```
 

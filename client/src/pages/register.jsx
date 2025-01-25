@@ -12,7 +12,7 @@ function Register() {
         const response = await fetch('http://localhost:3000/user/register', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({ name, email, password, password2 })
+            body: JSON.stringify({ name, email, password })
         });
         console.log(response);
     }
@@ -51,9 +51,10 @@ function Register() {
                     value={password2}
                     onChange={e => setPassword2(e.target.value)}
                     required
+                    pattern={password}
                 />
                 <br />
-                <button type="submit">Login</button>
+                <button type="submit">Register</button>
             </form>
             <Link to="/login">Have an account? Login here</Link>
         </div>
