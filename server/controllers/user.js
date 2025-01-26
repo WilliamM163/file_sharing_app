@@ -1,4 +1,5 @@
 const pool = require('../database/db');
+const bcrypt = require('bcrypt');
 
 exports.login = async (req, res) => {
     try {
@@ -10,7 +11,7 @@ exports.login = async (req, res) => {
         );
         if (user.rows.length === 0) {
             res.status(401).send({ title: 'User doesn\'t exists' });
-        } else if (user.rows[0].password === password) {
+        } else if (await bcrypt.compare(password, user.rows[0].password)) {
             res.status(200).send({ title: 'Success' });
         } else {
             res.status(401).send({ title: 'Incorrect Password' });
@@ -33,8 +34,12 @@ exports.register = async (req, res) => {
             return res.status(409).send({ title: 'Error: Email is already registered' });
         }
 
+        // Hashing the password
+        const salt = await bcrypt.genSalt();
+        const hashedPassword = await bcrypt.hash(password, salt);
+
         // Adding User
-        await pool.query('INSERT INTO users (name, email, password) VALUES ($1, $2, $3)', [name, email, password]);
+        await pool.query('INSERT INTO users (name, email, password) VALUES ($1, $2, $3)', [name, email, hashedPassword]);
         res.send({ title: 'Successfully Created User' });
     } catch (error) {
         console.error('Error registering user:', error);
