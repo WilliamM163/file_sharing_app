@@ -1,5 +1,9 @@
+require('dotenv').config();
 const pool = require('../database/db');
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
+
+const { ACCESS_TOKEN_SECRET } = process.env;
 
 exports.login = async (req, res) => {
     try {
@@ -9,16 +13,21 @@ exports.login = async (req, res) => {
         const user = await pool.query(
             'SELECT * FROM users WHERE email = $1', [email]
         );
+
+        // Checking email and passwords
         if (user.rows.length === 0) {
-            res.status(401).send({ title: 'User doesn\'t exists' });
-        } else if (await bcrypt.compare(password, user.rows[0].password)) {
-            res.status(200).send({ title: 'Success' });
-        } else {
-            res.status(401).send({ title: 'Incorrect Password' });
+            return res.sendStatus(401);
+        } else if (! await bcrypt.compare(password, user.rows[0].password)) {
+            return res.sendStatus(401);
         }
+
+        // Generating JWT and sending JWT
+        const token = jwt.sign({ name: email }, ACCESS_TOKEN_SECRET, { expiresIn: '1h' });
+        res.send({ accessToken: token });
+
     } catch (error) {
         console.error('Error registering user:', error);
-        res.status(500).send({ title: 'Internal Server Error' });
+        res.sendStatus(500);
     }
 }
 
@@ -40,9 +49,9 @@ exports.register = async (req, res) => {
 
         // Adding User
         await pool.query('INSERT INTO users (name, email, password) VALUES ($1, $2, $3)', [name, email, hashedPassword]);
-        res.send({ title: 'Successfully Created User' });
+        res.sendStatus(200);
     } catch (error) {
         console.error('Error registering user:', error);
-        res.status(500).send({ title: 'Internal Server Error' });
+        res.sendStatus(200);
     }
 }

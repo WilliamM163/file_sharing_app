@@ -1,7 +1,9 @@
 'use strict';
 const express = require('express');
 const cors = require('cors');
+
 const userController = require('./routes/user');
+const authenticate = require('./middleware/authenticate');
 
 const app = express();
 const port = 3000;
