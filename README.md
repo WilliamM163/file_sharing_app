@@ -2,6 +2,19 @@
 ## A simple and secure file sharing application for your local network.
 This project provides a web-based interface to easily transfer files between devices on your home network.  Designed with technical users in mind, it offers a reliable and customizable solution for sharing files without relying on cloud services.
 
+## Currently working on
+**High Priority**  
+Implementing JWT Authentication on the client side
+- [ ] On app startup to validate the user JWT token
+- [ ] Redirecting to login page when JWT token is invalid
+- [ ] Validate JWT token when app logic api's are used
+
+**Lower Priority**  
+File upload
+- [ ] How to use HTML tag `<input type='file'\>`
+- [ ] How to send file over the internet using HTTP requests
+- [ ] How to store the file on the server
+
 ## Features
 - **Local Network File Transfer:** Share files directly between devices connected to the same local network.
 - **Web-Based Interface:** A user-friendly web interface for easy file management and transfer.
@@ -42,7 +55,7 @@ In the server folder, adjust varaibles in `.env.template` and rename the file to
     ```
 
 ## Usage
-Once the server is running, you can access the file sharing application through your web browser at [the address where the app will be hosted]. 
+Once the server is running, you can access the file sharing application through your web browser at http://localhost:5173. 
 
 <!-- ## Contributing
 Contributions are welcome! Please refer to the CONTRIBUTING.md file for guidelines on how to contribute to this project. -->

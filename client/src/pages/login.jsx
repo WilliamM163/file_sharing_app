@@ -1,9 +1,10 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const navigate = useNavigate();
 
     const onSubmit = async (e) => {
         e.preventDefault();
@@ -12,7 +13,17 @@ function Login() {
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({ email, password })
         });
-        console.log(response);
+
+        if (!response.ok) {
+            throw new Error(`Error! Status: ${response.status}`);
+        }
+
+        // Successfull Response
+        const { accessToken } = await response.json();
+        localStorage.setItem("accessToken", accessToken);
+
+        // Navigate to home page
+        navigate('/');
     }
 
     return (
