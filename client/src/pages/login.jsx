@@ -8,7 +8,8 @@ function Login() {
 
     const onSubmit = async (e) => {
         e.preventDefault();
-        const response = await fetch('http://localhost:3000/user/login', {
+        const base_url = import.meta.env.VITE_API_URL;
+        const response = await fetch(`${base_url}/user/login`, {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({ email, password })
@@ -23,11 +24,11 @@ function Login() {
         localStorage.setItem("accessToken", accessToken);
 
         // Navigate to home page
-        navigate('/');
+        navigate('/home');
     }
 
     return (
-        <div>
+        <>
             <h1>Login</h1>
             <form onSubmit={onSubmit}>
                 <input
@@ -49,7 +50,7 @@ function Login() {
                 <button type="submit">Login</button>
             </form>
             <Link to="/register">Don't have an account? Register here</Link>
-        </div>
+        </>
     );
 }
 

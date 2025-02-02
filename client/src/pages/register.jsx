@@ -18,7 +18,7 @@ function Register() {
     }
 
     return (
-        <div>
+        <>
             <h1>Register</h1>
             <form onSubmit={onSubmit}>
                 <input
@@ -57,7 +57,7 @@ function Register() {
                 <button type="submit">Register</button>
             </form>
             <Link to="/login">Have an account? Login here</Link>
-        </div>
+        </>
     );
 }
 

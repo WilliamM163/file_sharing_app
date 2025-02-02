@@ -5,9 +5,9 @@ This project provides a web-based interface to easily transfer files between dev
 ## Currently working on
 **High Priority**  
 Implementing JWT Authentication on the client side
-- [ ] On app startup to validate the user JWT token
-- [ ] Redirecting to login page when JWT token is invalid
-- [ ] Validate JWT token when app logic api's are used
+- [x] On app startup to validate the user JWT token
+- [x] Redirecting to login page when JWT token is invalid
+- [x] Validate JWT token when app logic api's are used
 
 **Lower Priority**  
 File upload
