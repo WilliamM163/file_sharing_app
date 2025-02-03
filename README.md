@@ -10,9 +10,9 @@ This project provides a web-based interface to easily transfer files between dev
 - [x] Validate JWT token when app logic api's are used
 
 **File upload**
-- [ ] Research best practices for secure file uploads (e.g., size limitations, type restrictions).
-- [ ] Implement client-side form handling for file selection using the `<input type='file'>` element.
-- [ ] Develop server-side logic to receive, validate, and store uploaded files securely.
+- [x] Research best practices for secure file uploads (e.g., size limitations, type restrictions).
+- [x] Implement client-side form handling for file selection using the `<input type='file'>` element.
+- [ ] Develop server-side logic to receive, validate, and store uploaded files securely. `IN THE WORKS!`
 
 ### Lower Priority  
 **Registering multiple devices on the same account**
