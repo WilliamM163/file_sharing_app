@@ -20,8 +20,6 @@ const authenticate = async (req, res, next) => {
         console.error('ERROR: ', error.message);
         return res.status(401).send({error: error.message});
     }
-
-    next();
 }
 
 module.exports = authenticate;

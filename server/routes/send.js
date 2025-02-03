@@ -4,6 +4,8 @@ const router = express.Router();
 const authenticate = require('../middleware/authenticate');
 const sendController = require('../controllers/send');
 
-router.post('/file', authenticate, sendController.sendFile);
+const { upload } = require('../middleware/multer');
+
+router.post('/file', [authenticate, upload.array('file')], sendController.sendFile);
 
 module.exports = router;
