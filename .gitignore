@@ -2,6 +2,10 @@
 client/node_modules/
 server/node_modules/
 
+# Ignore VS Code settings
+client/.vscode
+server/.vscode
+
 # Ignore environment variables
 client/.env
 server/.env

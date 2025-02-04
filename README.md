@@ -12,7 +12,9 @@ This project provides a web-based interface to easily transfer files between dev
 **File upload**
 - [x] Research best practices for secure file uploads (e.g., size limitations, type restrictions).
 - [x] Implement client-side form handling for file selection using the `<input type='file'>` element.
-- [ ] Develop server-side logic to receive, validate, and store uploaded files securely. `IN THE WORKS!`
+- [x] Develop server-side logic to receive, validate, and store uploaded files securely.
+- [x] Associate file upload with user
+- [ ] Associate file sent to device or other user `IN THE WORKS!`
 
 ### Lower Priority  
 **Registering multiple devices on the same account**

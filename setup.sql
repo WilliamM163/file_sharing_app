@@ -4,12 +4,23 @@ CREATE DATABASE file_sharing_app;
 -- Connecting to the database
 \c file_sharing_app;
 
--- Creating tables
+-- Creating tables (many to many relationship)
 CREATE TABLE users (
-    id BIGSERIAL PRIMARY KEY,
+    email TEXT PRIMARY KEY,
     name TEXT,
-    email TEXT ,
     password TEXT
 );
 
-CREATE INDEX idx_user_email ON users(email);
+CREATE TABLE files (
+    path TEXT PRIMARY KEY,
+    original_name TEXT,
+    size BIGINT,
+    uploaded_at TIME DEFAULT CURRENT_TIME,
+    owner TEXT REFERENCES users(email)
+);
+
+CREATE TABLE users_files (
+    email TEXT REFERENCES users(email),
+    path TEXT REFERENCES files(path),
+    PRIMARY KEY (email, path)
+);
