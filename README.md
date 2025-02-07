@@ -9,6 +9,14 @@ This project provides a web-based interface to easily transfer files between dev
 - [x] Redirecting to login page when JWT token is invalid
 - [x] Validate JWT token when app logic api's are used
 
+### Client Design
+[Link to design](#client-design)
+- [ ] Implementing App Design in App
+- [ ] Setting up dummy API's for different features. Such as ...
+  - [ ] Getting Friends
+  - [ ] Getting Your Devices
+  - [ ] Recent Files
+
 **File upload**
 - [x] Research best practices for secure file uploads (e.g., size limitations, type restrictions).
 - [x] Implement client-side form handling for file selection using the `<input type='file'>` element.
@@ -31,6 +39,9 @@ This project provides a web-based interface to easily transfer files between dev
 - **Local Network File Transfer:** Share files directly between devices connected to the same local network.
 - **Web-Based Interface:** A user-friendly web interface for easy file management and transfer.
 <!-- - **Secure Connection:** [Mention any security measures implemented, e.g., HTTPS, authentication] -->
+
+## Client Design {#client-design}
+![Design File](./File%20Share.png)
 
 ## Installation
 1. **Dependencies:** Ensure you have the following installed on your system:
