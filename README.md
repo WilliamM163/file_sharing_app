@@ -49,30 +49,30 @@ This project provides a web-based interface to easily transfer files between dev
     - PostgreSQL
 
 2. **Clone Repository:**  
-    ```
+    ``` /bin/bash
     git clone https://github.com/WilliamM163/file_sharing_app.git
     ```
 
 3. **Navigate to Project Directory:**  
-    ```
+    ``` /bin/bash
     cd file_sharing_app
     ```
 
 4. **Database Setup:** Create a PostgreSQL database and run the setup script:  
-    ```
+    ``` /bin/bash
     psql -U [your_postgresql_username] -d [your_postgresql_database_name] -f setup.sql
     ```
 5. **Edit Environment Variables:**
 In the server folder, adjust varaibles in `.env.template` and rename the file to `.env`.
 
 6. **Start Client:** Start the client app using the following command:
-    ```
+    ``` /bin/bash
     cd client
     npm start
     ```
 
 7. **Start Server:** Start the API server using the following command:  
-    ```
+    ``` /bin/bash
     cd server
     npm start
     ```
