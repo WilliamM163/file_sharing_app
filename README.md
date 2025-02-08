@@ -3,15 +3,19 @@
 This project provides a web-based interface to easily transfer files between devices on your home network.  Designed with technical users in mind, it offers a reliable and customizable solution for sharing files without relying on cloud services.
 
 ## Currently working on
-### High Priority
 **Implementing JWT Authentication on the client side**
 - [x] On app startup to validate the user JWT token
 - [x] Redirecting to login page when JWT token is invalid
 - [x] Validate JWT token when app logic api's are used
+- [ ] Handle Refresh Tokens
 
 ### Client Design
 [Link to design](./File%20Share.png)
 - [ ] Implementing App Design in App
+  - [x] Implementing Skeleton Home Page in HTML
+  - [ ] Adding CSS
+  - [ ] Adding JS back to handle file uploads
+  - [ ] Add file upload status bar (on client side)
 - [x] Setting up dummy API's for different features. Such as ...
   - [x] Getting Friends
   - [x] Getting Your Devices
@@ -24,13 +28,12 @@ This project provides a web-based interface to easily transfer files between dev
 - [x] Associate file upload with user
 - [ ] Associate file sent to device or other user `IN THE WORKS!`
 
-### Lower Priority  
 **Registering multiple devices on the same account**
-- [ ] Explore options for linking devices to an account (e.g., HTTP headers, unique device identifiers).
+- [ ] Explore options for linking devices to an account (e.g., HTTP headers, unique device identifiers, new DB tables?).
 
 **Recieving files**
 - [ ] Research notification methods for specific devices (e.g., WebSockets, push notifications).  
-    Explore libraries or services that can handle device-specific notifications.   
+    Explore libraries or services that can handle device-specific notifications.
 
 **Sending files to a different user**
 - [ ] Design and implement a contact list feature to allow users to send files to other registered accounts.
