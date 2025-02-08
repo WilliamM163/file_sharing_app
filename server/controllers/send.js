@@ -24,7 +24,5 @@ exports.sendFile = async (req, res) => {
             console.error('Error entering data: ', error);
         }
     }
-
-
     res.send({ message: 'Uploaded Successfully' });
 }

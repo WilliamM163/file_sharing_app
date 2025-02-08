@@ -7,8 +7,6 @@ const checkLogin = async () => {
             method: 'POST',
             headers: { 'Authorization': accessToken }
         });
-        console.log(response);
-        console.log(response.ok);
         
         return response.ok;
     } catch (error) {
