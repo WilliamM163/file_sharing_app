@@ -12,10 +12,10 @@ This project provides a web-based interface to easily transfer files between dev
 ### Client Design
 [Link to design](./File%20Share.png)
 - [ ] Implementing App Design in App
-- [ ] Setting up dummy API's for different features. Such as ...
-  - [ ] Getting Friends
-  - [ ] Getting Your Devices
-  - [ ] Recent Files
+- [x] Setting up dummy API's for different features. Such as ...
+  - [x] Getting Friends
+  - [x] Getting Your Devices
+  - [x] Recent Files
 
 **File upload**
 - [x] Research best practices for secure file uploads (e.g., size limitations, type restrictions).
