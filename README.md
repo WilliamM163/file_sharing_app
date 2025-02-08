@@ -10,7 +10,7 @@ This project provides a web-based interface to easily transfer files between dev
 - [x] Validate JWT token when app logic api's are used
 
 ### Client Design
-[Link to design](#client-design)
+[Link to design](./File%20Share.png)
 - [ ] Implementing App Design in App
 - [ ] Setting up dummy API's for different features. Such as ...
   - [ ] Getting Friends
@@ -40,7 +40,7 @@ This project provides a web-based interface to easily transfer files between dev
 - **Web-Based Interface:** A user-friendly web interface for easy file management and transfer.
 <!-- - **Secure Connection:** [Mention any security measures implemented, e.g., HTTPS, authentication] -->
 
-## Client Design <a name="#client-design"></a>
+## Client Design
 ![Design File](./File%20Share.png)
 
 ## Installation
