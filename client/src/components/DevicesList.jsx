@@ -4,6 +4,15 @@ import getDevices from '../functions/getDevices';
 function DevicesList() {
     const [devices, setDevices] = useState([]);
 
+    const onClick = (id) => {
+        const selectFile = document.getElementById(`DEVICE:${id}`)
+        selectFile.click();
+    }
+
+    const uploadFile = (e) => {
+        console.log(e.target.files);
+    }
+
     const tile = (sendList) => {
         const deviceType = {
             'LAPTOP': '/icons/devices/laptop.svg',
@@ -18,7 +27,8 @@ function DevicesList() {
         return sendList.map(item => {
             const src = deviceType.getIcon(item.type);
             return (
-                <li className='tile'>
+                <li className='tile' onClick={() => { onClick(item.id) }}>
+                    <input type="file" className="input_file" id={`DEVICE:${item.id}`} onChange={uploadFile} multiple />
                     <img src={src} alt={item.type} width='75px' height='75px' />
                     {item.name}
                 </li>

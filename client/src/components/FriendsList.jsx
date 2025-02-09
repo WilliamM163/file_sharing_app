@@ -10,7 +10,7 @@ function FriendsList() {
                 <li className='tile'>
                     {item.profile_pic
                         ? <img src={item.profile_pic} alt="Profile Pic" width="75px" height="75px"/>
-                        : <img src="/public/icons/account.svg" alt="Account Icon" width="75px" height="75px"/>
+                        : <img src="/icons/account.svg" alt="Account Icon" width="75px" height="75px"/>
                     }
                     {item.name}
                 </li>

@@ -108,3 +108,7 @@ header h1 {
 .file span {
     margin-left: 1em; /* Space between icon and text */
 }
+
+.input_file {
+    display: none;
+}

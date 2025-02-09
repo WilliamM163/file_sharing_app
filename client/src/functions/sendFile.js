@@ -1,4 +1,4 @@
-const uploadFile = (e) => {
+const sendFile = (e) => {
     e.preventDefault();
     const files = e.target.form.files;
 
