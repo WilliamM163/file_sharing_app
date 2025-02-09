@@ -18,10 +18,10 @@ function RecentList() {
 
         return files.map(file => {
             return (
-                <div>
+                <li className="file">
                     {file.type ? <img src={fileType.getIcon(file.type)} alt={file.type} /> : <></>}
                     {file.name}
-                </div>
+                </li>
             )
         });
     }
@@ -33,9 +33,11 @@ function RecentList() {
     }, []);
 
     return (
-        <div>
-            <h2>Recent Files</h2>
-            {tile(recentFiles)}
+        <div className="container">
+            <h2 className="title">Recent Files</h2>
+            <ul className="recentList">
+                {tile(recentFiles)}
+            </ul>
         </div>
     )
 }

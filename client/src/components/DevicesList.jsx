@@ -9,19 +9,19 @@ function DevicesList() {
             'LAPTOP': '/icons/devices/laptop.svg',
             'PHONE': '/icons/devices/phone.svg',
             'TABLET': '/icons/devices/tablet.svg',
-    
+
             getIcon(deviceType) {
                 return this[deviceType] || '/icons/devices/other.svg';
             }
         }
-        
+
         return sendList.map(item => {
             const src = deviceType.getIcon(item.type);
             return (
-                <div>
-                    <img src={src} alt={item.type} />
+                <li className='tile'>
+                    <img src={src} alt={item.type} width='75px' height='75px' />
                     {item.name}
-                </div>
+                </li>
             )
         });
     }
@@ -33,9 +33,11 @@ function DevicesList() {
     }, []);
 
     return (
-        <div>
-            <h2>Your Devices</h2>
-            {tile(devices)}
+        <div className='container'>
+            <h2 className='title'>Your Devices</h2>
+            <ul className='sendList'>
+                {tile(devices)}
+            </ul>
         </div>
     )
 }

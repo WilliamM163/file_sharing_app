@@ -8,7 +8,7 @@ function Home() {
     <>
         <header>
             <h1>File Share</h1>
-            <img src="/icons/settings.svg" alt="settings" />
+            <img src="/icons/settings.svg" alt="settings" width="35px" height="35px" />
         </header>
 
         <DevicesList></DevicesList>

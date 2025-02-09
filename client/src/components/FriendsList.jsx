@@ -7,10 +7,13 @@ function FriendsList() {
     const tile = (sendList) => {
         return sendList.map(item => {
             return (
-                <div>
-                    {item.profile_pic ? <img src={item.profile_pic} alt="Profile Pic" /> : <></>}
+                <li className='tile'>
+                    {item.profile_pic
+                        ? <img src={item.profile_pic} alt="Profile Pic" width="75px" height="75px"/>
+                        : <img src="/public/icons/account.svg" alt="Account Icon" width="75px" height="75px"/>
+                    }
                     {item.name}
-                </div>
+                </li>
             )
         });
     }
@@ -22,9 +25,11 @@ function FriendsList() {
     }, []);
 
     return (
-        <div>
-            <h2>Friends</h2>
-            {tile(friends)}
+        <div className='container'>
+            <h2 className='title'>Friends</h2>
+            <ul className='sendList'>
+                {tile(friends)}
+            </ul>
         </div>
     )
 }
