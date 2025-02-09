@@ -14,14 +14,6 @@ function Home() {
         <DevicesList></DevicesList>
         <FriendsList></FriendsList>
         <RecentList></RecentList>
-
-        <form>
-            <label htmlFor="FileUpload">Select a file:</label>
-            <br />
-            <input type="file" id="form" multiple />
-            <br />
-            <button type='Submit'>Send</button>
-        </form>
     </>
     );
 }
