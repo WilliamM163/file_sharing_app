@@ -10,10 +10,10 @@ This project provides a web-based interface to easily transfer files between dev
 - [ ] Handle Refresh Tokens
 
 ### Client Design
-[Link to design](./File%20Share.png)
+[Link to design](./style.png)
 - [ ] Implementing App Design in App
   - [x] Implementing Skeleton Home Page in HTML
-  - [ ] Adding CSS
+  - [x] Adding CSS
   - [ ] Adding JS back to handle file uploads
   - [ ] Add file upload status bar (on client side)
 - [x] Setting up dummy API's for different features. Such as ...
@@ -44,7 +44,7 @@ This project provides a web-based interface to easily transfer files between dev
 <!-- - **Secure Connection:** [Mention any security measures implemented, e.g., HTTPS, authentication] -->
 
 ## Client Design
-![Design File](./File%20Share.png)
+![Design File](./style.png)
 
 ## Installation
 1. **Dependencies:** Ensure you have the following installed on your system:
