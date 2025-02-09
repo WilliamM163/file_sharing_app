@@ -44,7 +44,7 @@ This project provides a web-based interface to easily transfer files between dev
 <!-- - **Secure Connection:** [Mention any security measures implemented, e.g., HTTPS, authentication] -->
 
 ## Client Design
-![Design File](./style.png)
+<img src="./style.png" width="350px" alt="Design File"/>
 
 ## Installation
 1. **Dependencies:** Ensure you have the following installed on your system:
