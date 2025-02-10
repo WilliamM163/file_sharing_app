@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
+import style from './style';
+
 function Register() {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -18,8 +20,8 @@ function Register() {
     }
 
     return (
-        <>
-            <h1>Register</h1>
+        <div className='container' style={style.container}>
+            <h1 className='title' style={style.title}>Register</h1>
             <form onSubmit={onSubmit}>
                 <input
                     type="text"
@@ -56,8 +58,9 @@ function Register() {
                 <br />
                 <button type="submit">Register</button>
             </form>
+            <br />
             <Link to="/login">Have an account? Login here</Link>
-        </>
+        </div>
     );
 }
 

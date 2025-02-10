@@ -2,14 +2,6 @@
 ## A simple and secure file sharing application for your local network.
 This project provides a web-based interface to easily transfer files between devices on your home network.  Designed with technical users in mind, it offers a reliable and customizable solution for sharing files without relying on cloud services.
 
-## Known Bugs
-1. When logging in React tries to redirect to the homepage but fails. Temporary fix
-   * Check localstorage to see if accessToken has changed when logging in
-   * If so
-     * Try navigate to the homepage by changing url to http://localhost:3175
-   * If not
-     * Your password must be wrong, try again
-
 ## Currently working on
 **Implementing JWT Authentication on the client side**
 - [x] On app startup to validate the user JWT token

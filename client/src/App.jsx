@@ -12,6 +12,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    console.log('I am called!');
     checkLogin().then(response => {
       setIsAuth(response);
       setIsLoading(false);
@@ -30,7 +31,7 @@ function App() {
 
         {/* Public Routes */}
         <Route path="/" element={<Navigate to="/home" />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/login" element={<Login setIsAuth={setIsAuth} />} />
         <Route path="/register" element={<Register />} />
         <Route path="/*" element={<NotFound />} />
       </Routes>
