@@ -12,7 +12,6 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    console.log('I am called!');
     checkLogin().then(response => {
       setIsAuth(response);
       setIsLoading(false);
@@ -28,6 +27,7 @@ function App() {
       <Routes>
         {/* Protected Routes */}
         <Route path="/home" element={isAuth ? <Home /> : <Navigate to="/login" />} />
+        <Route path="/settings" element={isAuth ? <Home setIsAuth={setIsAuth} />: <Navigate to="/login" />} /> {/* Load Setting Modal */}
 
         {/* Public Routes */}
         <Route path="/" element={<Navigate to="/home" />} />

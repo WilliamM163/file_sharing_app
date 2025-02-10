@@ -5,12 +5,9 @@ function DevicesList() {
     const [devices, setDevices] = useState([]);
 
     const onClick = (id) => {
-        const selectFile = document.getElementById(`DEVICE:${id}`)
+        const selectFile = document.querySelector("input[type=file]")
+        selectFile.setAttribute('id', `DEVICE:${id}`)
         selectFile.click();
-    }
-
-    const uploadFile = (e) => {
-        console.log(e.target.files);
     }
 
     const tile = (sendList) => {
@@ -28,7 +25,6 @@ function DevicesList() {
             const src = deviceType.getIcon(item.type);
             return (
                 <li className='tile' onClick={() => { onClick(item.id) }}>
-                    <input type="file" className="input_file" id={`DEVICE:${item.id}`} onChange={uploadFile} multiple />
                     <img src={src} alt={item.type} width='75px' height='75px' />
                     {item.name}
                 </li>

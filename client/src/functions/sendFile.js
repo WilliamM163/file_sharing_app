@@ -1,6 +1,13 @@
 const sendFile = (e) => {
-    e.preventDefault();
-    const files = e.target.form.files;
+    console.log('SENDING');
+    const sendTo = e.target.id;
+    const files = e.target.files;
+    
+    console.log(`TO: ${sendTo}`);
+    console.log(`FILES: ${files}`);
+    
+    /*
+    const files = e.target.files;
 
     if (files.length === 0) {
         alert('Please Select A File To Send!');
@@ -22,7 +29,7 @@ const sendFile = (e) => {
             alert('SUCCESS');
         }
     });
-    
+    */
 }
 
-export default uploadFile;
+export default sendFile;

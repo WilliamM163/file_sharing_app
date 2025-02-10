@@ -14,7 +14,7 @@ This project provides a web-based interface to easily transfer files between dev
 - [ ] Implementing App Design in App
   - [x] Implementing Skeleton Home Page in HTML
   - [x] Adding CSS
-  - [ ] Adding JS back to handle file uploads
+  - [ ] Adding JS back to handle file uploads `IN THE WORKS!`
   - [ ] Add file upload status bar (on client side)
 - [x] Setting up dummy API's for different features. Such as ...
   - [x] Getting Friends

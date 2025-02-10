@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import style from './style';
+import style from '../style';
 
 function Register() {
     const [name, setName] = useState('');

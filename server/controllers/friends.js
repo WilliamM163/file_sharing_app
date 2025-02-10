@@ -2,17 +2,17 @@ exports.getFriends = (req, res) => {
     res.send({
         friends: [
             {
-                id: 1,
+                email: 'lucy@gmail.com',
                 name: 'Lucy',
                 profile_pic: null
             },
             {
-                id: 2,
+                email: 'dave@icloud.com',
                 name: 'Dave',
                 profile_pic: null
             },
             {
-                id: 3,
+                email: 'emily@gmail.com',
                 name: 'Emily',
                 profile_pic: null
             }

@@ -1,19 +1,20 @@
+import Header from '../components/Header';
+import Settings from '../components/Settings';
 import DevicesList from '../components/DevicesList';
 import FriendsList from '../components/FriendsList';
 import RecentList from '../components/RecentList';
 
-function Home() {
+import sendFile from '../functions/sendFile';
 
+function Home({ setIsAuth }) {
     return (
         <>
-            <header>
-                <h1>File Share</h1>
-                <img src="/icons/settings.svg" alt="settings" width="35px" height="35px" />
-            </header>
-
+            <Header></Header>
+            <Settings setIsAuth={setIsAuth} ></Settings>
             <DevicesList></DevicesList>
             <FriendsList></FriendsList>
             <RecentList></RecentList>
+            <input type="file" className="input_file" id="" onChange={sendFile} multiple />
         </>
     );
 }

@@ -4,9 +4,12 @@
 :root {
     --font-size: 16px;
     --border-radius: 1em;
-    --primary-color: #69698c; /* Darker, more sophisticated primary color */
-    --light-color: #f5f5f5;   /* Off-white for better contrast */
-    --box-shadow: 0.2em 0.2em 0.5em rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    --primary-color: #69698c;
+    /* Darker, more sophisticated primary color */
+    --light-color: #f5f5f5;
+    /* Off-white for better contrast */
+    --box-shadow: 0.2em 0.2em 0.5em rgba(0, 0, 0, 0.2);
+    /* Subtle shadow for depth */
 }
 
 body {
@@ -14,109 +17,34 @@ body {
     font-weight: 400;
     font-style: normal;
     font-size: var(--font-size);
-    margin: 0; /* Removed default margin for better control */
-    background-color: var(--light-color); /* Set background color */
-    color: var(--primary-color); /* Set text color */
+    margin: 0;
+    /* Removed default margin for better control */
+    background-color: var(--light-color);
+    /* Set background color */
+    color: var(--primary-color);
+    /* Set text color */
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Ensure body covers full viewport height */
+    min-height: 100vh;
+    /* Ensure body covers full viewport height */
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
     font-family: "Abril Fatface", serif;
     font-weight: 400;
     font-style: normal;
-    color: var(--primary-color); /* Ensure headings have consistent color */
-}
-
-/* Header */
-header {
-    padding: 1em 2em; /* Consistent padding with body */
-    background-color: var(--primary-color); /* Darker header background */
-    color: var(--light-color); /* Light text for header */
-    display: flex;
-    justify-content: space-between;
-    align-items: center; /* Vertically center header content */
-}
-
-header h1 {
-    color: var(--light-color);
-}
-
-
-/* Container Styles */
-.container {
-    background-color: white; /* White container background */
-    padding: 2em; /* Increased padding */
-    margin: 2em; /* Added margin around containers */
-    border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow); /* Added shadow */
-    flex: 1; /* Allow containers to take up available space */
-}
-
-
-.title {
-    margin: 0 0 1em 0; /* Added bottom margin */
-    text-align: left; /* Align title to the left */
     color: var(--primary-color);
-}
-
-.sendList {
-    list-style-type: none;
-    padding: 0;
-    display: flex;
-    justify-content: space-around; /* Distribute items evenly */
-    margin-bottom: 2em; /* Space between sections */
-}
-
-.tile {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.tile img {
-    width: 50px; /* Adjust image size as needed */
-    height: 50px;
-    margin-bottom: 0.5em; /* Space below image */
-    /* border-radius: 50%; Make images circular */
-    object-fit: cover; /* Maintain aspect ratio and cover the circle */
-}
-
-.recentList {
-    list-style-type: none;
-    padding: 0;
-}
-
-.file {
-    background-color: var(--light-color); /* Off-white file background */
-    padding: 0.5em 1em; /* Increased padding */
-    margin: .5em 0;
-    border-radius: 0.5em; /* Rounded corners for files */
-    box-shadow: 0.1em 0.1em 0.3em rgba(0, 0, 0, 0.1); /* Lighter shadow for files */
-    display: flex; /* Use flexbox for alignment */
-    align-items: center; /* Vertically align content */
-}
-
-.file:hover {
-    background-color: #e0e0e0; /* Slightly darker background on hover */
-    transform: scale(1.02); /* Scale up slightly on hover */
-    box-shadow: 0.2em 0.2em 0.5em rgba(0, 0, 0, 0.15); /* More prominent shadow */
-    cursor: pointer; /* Indicate that it's clickable */
-}
-
-.file span {
-    margin-left: 1em; /* Space between icon and text */
-}
-
-.input_file {
-    display: none;
+    /* Ensure headings have consistent color */
 }
 
 /* Login & Register Form */
 form {
     display: block;
 }
+
 form input[type="text"],
 form input[type="email"],
 form input[type="password"] {
@@ -142,4 +70,141 @@ form button[type="submit"] {
 
 .navigate:hover {
     text-decoration: underline;
+}
+
+/* HOME PAGE STYLING */
+/* Header */
+header {
+    padding: 1em 2em; /* Consistent padding with body */
+    background-color: var(--primary-color); /* Darker header background */
+    color: var(--light-color); /* Light text for header */
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Vertically center header content */
+}
+
+header h1 {
+    color: var(--light-color);
+}
+
+
+/* Container Styles */
+.container {
+    background-color: white;
+    /* White container background */
+    padding: 2em;
+    /* Increased padding */
+    margin: 2em;
+    /* Added margin around containers */
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    /* Added shadow */
+    flex: 1;
+    /* Allow containers to take up available space */
+}
+
+
+.title {
+    margin: 0 0 1em 0;
+    /* Added bottom margin */
+    text-align: left;
+    /* Align title to the left */
+    color: var(--primary-color);
+}
+
+.sendList {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    /* Distribute items evenly */
+    margin-bottom: 2em;
+    /* Space between sections */
+}
+
+.tile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tile img {
+    width: 50px;
+    /* Adjust image size as needed */
+    height: 50px;
+    margin-bottom: 0.5em;
+    /* Space below image */
+    /* border-radius: 50%; Make images circular */
+    object-fit: cover;
+    /* Maintain aspect ratio and cover the circle */
+}
+
+.recentList {
+    list-style-type: none;
+    padding: 0;
+}
+
+.file {
+    background-color: var(--light-color);
+    /* Off-white file background */
+    padding: 0.5em 1em;
+    /* Increased padding */
+    margin: .5em 0;
+    border-radius: 0.5em;
+    /* Rounded corners for files */
+    box-shadow: 0.1em 0.1em 0.3em rgba(0, 0, 0, 0.1);
+    /* Lighter shadow for files */
+    display: flex;
+    /* Use flexbox for alignment */
+    align-items: center;
+    /* Vertically align content */
+}
+
+.file:hover {
+    background-color: #e0e0e0;
+    /* Slightly darker background on hover */
+    transform: scale(1.02);
+    /* Scale up slightly on hover */
+    box-shadow: 0.2em 0.2em 0.5em rgba(0, 0, 0, 0.15);
+    /* More prominent shadow */
+    cursor: pointer;
+    /* Indicate that it's clickable */
+}
+
+.file span {
+    margin-left: 1em;
+    /* Space between icon and text */
+}
+
+.input_file {
+    display: none;
+}
+
+/* Modal Styling */
+.modal {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.4);
+    display: flexbox;
+    align-content: center;
+    justify-items: center;
+}
+
+.modal .container {
+    width: 30em;
+}
+
+.modal header {
+    background-color: unset;
+    color: unset;
+    padding: unset;
+}
+
+.modal header h1 {
+    color: unset;
 }
