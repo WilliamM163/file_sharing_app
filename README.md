@@ -2,49 +2,33 @@
 ## A simple and secure file sharing application for your local network.
 This project provides a web-based interface to easily transfer files between devices on your home network.  Designed with technical users in mind, it offers a reliable and customizable solution for sharing files without relying on cloud services.
 
-## Currently working on
+## Design
+App Design: [style.png](./style.png)
+DB Design: [db_diagram.png](./db_diagram.png)
+
+## To dos
+**Features**
+- [ ] Setting up APIS for ...
+  - [x] Getting & Registering Devices
+    - [ ] Storing deviceID in localStorage
+  - [ ] Getting & Adding Friends
+  - [ ] Getting Recent Files
+  - [ ] Uploading File `IN THE WORKS!`
+    - [ ] Add file upload status bar (on client side)
+    - [ ] Associating File's with Users
+  - [ ] Notifying user when file is sent
+    - [ ] Learn how to use Websockets + Service Workers to make Push Notifications
+
 **Implementing JWT Authentication on the client side**
 - [x] On app startup to validate the user JWT token
 - [x] Redirecting to login page when JWT token is invalid
 - [x] Validate JWT token when app logic api's are used
 - [ ] Handle Refresh Tokens
 
-### Client Design
-[Link to design](./style.png)
-- [ ] Implementing App Design in App
-  - [x] Implementing Skeleton Home Page in HTML
-  - [x] Adding CSS
-  - [ ] Adding JS back to handle file uploads `IN THE WORKS!`
-  - [ ] Add file upload status bar (on client side)
-- [x] Setting up dummy API's for different features. Such as ...
-  - [x] Getting Friends
-  - [x] Getting Your Devices
-  - [x] Recent Files
-
-**File upload**
-- [x] Research best practices for secure file uploads (e.g., size limitations, type restrictions).
-- [x] Implement client-side form handling for file selection using the `<input type='file'>` element.
-- [x] Develop server-side logic to receive, validate, and store uploaded files securely.
-- [x] Associate file upload with user
-- [ ] Associate file sent to device or other user `IN THE WORKS!`
-
-**Registering multiple devices on the same account**
-- [ ] Explore options for linking devices to an account (e.g., HTTP headers, unique device identifiers, new DB tables?).
-
-**Recieving files**
-- [ ] Research notification methods for specific devices (e.g., WebSockets, push notifications).  
-    Explore libraries or services that can handle device-specific notifications.
-
-**Sending files to a different user**
-- [ ] Design and implement a contact list feature to allow users to send files to other registered accounts.
-
 ## Features
 - **Local Network File Transfer:** Share files directly between devices connected to the same local network.
 - **Web-Based Interface:** A user-friendly web interface for easy file management and transfer.
 <!-- - **Secure Connection:** [Mention any security measures implemented, e.g., HTTPS, authentication] -->
-
-## Client Design
-<img src="./style.png" width="350px" alt="Design File"/>
 
 ## Installation
 1. **Dependencies:** Ensure you have the following installed on your system:
@@ -52,30 +36,30 @@ This project provides a web-based interface to easily transfer files between dev
     - PostgreSQL
 
 2. **Clone Repository:**  
-    ``` /bin/bash
+    ```
     git clone https://github.com/WilliamM163/file_sharing_app.git
     ```
 
 3. **Navigate to Project Directory:**  
-    ``` /bin/bash
+    ```
     cd file_sharing_app
     ```
 
 4. **Database Setup:** Create a PostgreSQL database and run the setup script:  
-    ``` /bin/bash
+    ```
     psql -U [your_postgresql_username] -d [your_postgresql_database_name] -f setup.sql
     ```
 5. **Edit Environment Variables:**
 In the server folder, adjust varaibles in `.env.template` and rename the file to `.env`.
 
 6. **Start Client:** Start the client app using the following command:
-    ``` /bin/bash
+    ```
     cd client
     npm start
     ```
 
 7. **Start Server:** Start the API server using the following command:  
-    ``` /bin/bash
+    ```
     cd server
     npm start
     ```

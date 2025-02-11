@@ -1,17 +1,13 @@
 import { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
+import logout from "../functions/logout";
+import registerDevice from "../functions/registerDevice";
 
-function Settings({ setIsAuth }) {
+function SettingsModal({ setIsAuth }) {
     const [showSettings, setShowSettings] = useState(false);
     const location = useLocation();
     const navigate = useNavigate();
-
-    const logout = () => {
-        localStorage.removeItem('accessToken');
-        navigate('/');
-        setIsAuth(false);
-    }
 
     const closeModal = () => {
         navigate(-1);
@@ -38,10 +34,24 @@ function Settings({ setIsAuth }) {
                         onClick={closeModal}
                     />
                 </header>
-                <button onClick={logout}>Logout</button>
+                <h2>Register a new device</h2>
+                <input type="text" placeholder="Device Name" name="Device Name" />
+                <br />
+                <select name="Device Type">
+                    <option value=""></option>
+                    <option value="LAPTOP">Laptop</option>
+                    <option value="PHONE">Phone</option>
+                    <option value="TABLET">Tablet</option>
+                    <option value="OTHER">Other</option>
+                </select>
+                <br />
+                <button onClick={() => registerDevice()}>Register Device</button>
+                <br />
+                <h2>Logout</h2>
+                <button onClick={() => logout(navigate, setIsAuth)}>Logout</button>
             </div>
         </div>
     )
 }
 
-export default Settings;
+export default SettingsModal;

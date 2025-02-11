@@ -1,43 +1,35 @@
-exports.getDevices = (req, res) => {
-    res.send({
-        devices: [
-            {
-                id: 1,
-                name: 'Macbook Air',
-                type: 'LAPTOP'
-            },
-            {
-                id: 2,
-                name: 'Samsung S23',
-                type: 'PHONE'
-            },
-            {
-                id: 3,
-                name: 'Samsung Tab S9 FE',
-                type: 'TABLET'
-            },
-            {
-                id: 4,
-                name: 'Smartwatch',
-                type: 'WATCH'
-            }
-        ],
-        friends: [
-            {
-                id: 1,
-                name: 'Lucy',
-                profile_pic: null
-            },
-            {
-                id: 2,
-                name: 'Dave',
-                profile_pic: null
-            },
-            {
-                id: 3,
-                name: 'Emily',
-                profile_pic: null
-            }
-        ]
-    });
+const pool = require('../database/db');
+
+exports.getDevices = async (req, res) => {
+    const email = req.user.email;
+    const results = await pool.query(`
+        SELECT * FROM devices
+        WHERE email = $1;`,
+        [email]
+    );
+    res.send({ devices: results.rows});
+}
+exports.registerDevice = async (req, res) => {
+    try {
+        const email = req.user.email;
+        const { deviceName, deviceType } = req.body;
+
+        await pool.query(`
+            INSERT INTO devices
+            (email, name, type)
+            VALUES
+            ($1, $2, $3);`,
+            [email, deviceName, deviceType]
+        );
+        const result = await pool.query(`
+            SELECT * FROM devices
+            WHERE name = $1;`,
+            [deviceName]
+        );
+        console.log(result.rows);
+        res.send({ db_entry: result.rows[0] });
+    } catch (error) {
+        console.error('Error registering device:', error);
+        res.status(500).send({ error: error.detail });
+    }
 }

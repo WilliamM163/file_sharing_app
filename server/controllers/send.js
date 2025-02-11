@@ -2,6 +2,7 @@ require('dotenv').config();
 const pool = require('../database/db');
 
 exports.sendFile = async (req, res) => {
+    console.log(req.body);
     for (let i = 0; i < req.files.length; i++) {
         const file = req.files[i];
         const { path, originalname, size } = file;

@@ -18,7 +18,7 @@ function RecentList() {
 
         return files.map(file => {
             return (
-                <li className="file">
+                <li key={file.id} className="file">
                     {file.type ? <img src={fileType.getIcon(file.type)} alt={file.type} /> : <></>}
                     {file.name}
                 </li>

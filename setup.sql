@@ -24,3 +24,10 @@ CREATE TABLE users_files (
     path TEXT REFERENCES files(path),
     PRIMARY KEY (email, path)
 );
+
+CREATE TABLE devices (
+    id SERIAL PRIMARY KEY,
+    email TEXT REFERENCES users(email),
+    name TEXT UNIQUE,
+    type TEXT
+);

@@ -24,7 +24,7 @@ function DevicesList() {
         return sendList.map(item => {
             const src = deviceType.getIcon(item.type);
             return (
-                <li className='tile' onClick={() => { onClick(item.id) }}>
+                <li key={item.id} className='tile' onClick={() => { onClick(item.id) }}>
                     <img src={src} alt={item.type} width='75px' height='75px' />
                     {item.name}
                 </li>

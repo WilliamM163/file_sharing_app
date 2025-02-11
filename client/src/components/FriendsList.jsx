@@ -13,7 +13,7 @@ function FriendsList() {
     const tile = (sendList) => {
         return sendList.map(item => {
             return (
-                <li className='tile' onClick={() => {onClick(item.email)}}>
+                <li key={item.email} className='tile' onClick={() => {onClick(item.email)}}>
                     {item.profile_pic
                         ? <img src={item.profile_pic} alt="Profile Pic" width="75px" height="75px"/>
                         : <img src="/icons/account.svg" alt="Account Icon" width="75px" height="75px"/>

@@ -1,5 +1,5 @@
 import Header from '../components/Header';
-import Settings from '../components/Settings';
+import SettingsModal from '../components/Settings';
 import DevicesList from '../components/DevicesList';
 import FriendsList from '../components/FriendsList';
 import RecentList from '../components/RecentList';
@@ -10,7 +10,7 @@ function Home({ setIsAuth }) {
     return (
         <>
             <Header></Header>
-            <Settings setIsAuth={setIsAuth} ></Settings>
+            <SettingsModal setIsAuth={setIsAuth} ></SettingsModal>
             <DevicesList></DevicesList>
             <FriendsList></FriendsList>
             <RecentList></RecentList>

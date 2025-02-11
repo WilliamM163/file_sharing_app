@@ -8,7 +8,6 @@ const { ACCESS_TOKEN_SECRET } = process.env;
 exports.login = async (req, res) => {
     try {
         const { email, password } = req.body;
-        console.log(email);
 
         // Checking DB
         const user = await pool.query(
@@ -24,7 +23,6 @@ exports.login = async (req, res) => {
 
         // Generating JWT and sending JWT
         const token = jwt.sign({ email }, ACCESS_TOKEN_SECRET, { expiresIn: '1h' });
-        console.log(token);
         res.send({ accessToken: token });
 
     } catch (error) {
