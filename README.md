@@ -3,7 +3,7 @@
 This project provides a web-based interface to easily transfer files between devices on your home network.  Designed with technical users in mind, it offers a reliable and customizable solution for sharing files without relying on cloud services.
 
 ## Design
-App Design: [style.png](./style.png)
+App Design: [style.png](./style.png)  
 DB Design: [db_diagram.png](./db_diagram.png)
 
 ## To dos
