@@ -1,7 +1,4 @@
-const registerDevice = async () => {
-    const deviceName = document.querySelector('input[name="Device Name"]').value;
-    const deviceType = document.querySelector('select[name="Device Type"]').value;
-
+const registerDevice = async (deviceName, deviceType) => {
     try {
         const deviceID = localStorage.getItem('deviceID');
         if (deviceID) {

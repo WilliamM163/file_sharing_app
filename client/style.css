@@ -208,3 +208,13 @@ header h1 {
 .modal header h1 {
     color: unset;
 }
+
+/* Settings Page */
+.device_settings {
+    display: flex;
+    justify-content: space-between;
+}
+
+.device_settings div {
+    width: 15em;
+}
